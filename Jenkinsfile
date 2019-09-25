@@ -6,14 +6,15 @@ pipeline {
     }
 
   }
-  environment {
-    HOME = '.'
-  }
   stages {
     stage('Build') {
       steps {
         sh 'npm install'
       }
     }
+  }
+  environment {
+    HOME = '.'
+    npm_config_cache = 'npm-cache'
   }
 }
